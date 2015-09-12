@@ -1,0 +1,8 @@
+{
+  "name": "Anyone At Home",
+  "description": "See who is home",
+  "repository": "https://github.com/jayanth88/anyOneAtHome.git",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}
