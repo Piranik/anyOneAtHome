@@ -1,5 +1,4 @@
 #!/usr/bin/python
-#####! /usr/bin/env python
 from scapy.all import *
 import time
 import urllib
@@ -26,6 +25,5 @@ def arp_monitor_callback(pkt):
 	 response = urllib2.urlopen(req)
 	 result = response.read()
 	 print result
-	 #return pkt.sprintf("%ARP.hwsrc% %ARP.psrc% %ARP.show()%"+str(ts))
 
 sniff(prn=arp_monitor_callback, filter="arp", store=0)
