@@ -65,7 +65,9 @@ app.post('/update', function(request, response) {
       var jsonString ='';
       var userInfo = new Array();
       var property ='';
+
       request.on('data', function (data) {
+           console.log(decodeURIComponent(jsonString));
            jsonString = data.toString().split('&');
            console.log(jsonString);
 
@@ -73,7 +75,9 @@ app.post('/update', function(request, response) {
               property = jsonString[i].toString().split('=');
 
               if(property.length >1){
-                userInfo[property[0]]=property[1];
+                key = decodeURIComponent(property[0]);
+                value = decodeURIComponent(property[1])
+                userInfo[key]=value;
               }
            }
            if(userInfo.mac){
