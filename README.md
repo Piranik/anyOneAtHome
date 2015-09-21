@@ -1,7 +1,14 @@
 # anyOneAtHome
-Detects presence of devices in a wifi network
+This is a sample app that determines if anyone is present in a wifi network
+
+The entire setup is segregated in to 2 parts
+i) client: A scapy program that detects arp packets in the network and updates the remote app.
+ii) App : A node js app that listens to client request mainly
+          a) scapy client request
+          b) user request for display
 
 
+SCHEMA OF REMOTE DB:
 
 create table userInfo (
         mac varchar(30) primary key,
@@ -10,5 +17,3 @@ create table userInfo (
         deviceType varchar(20),
         lastseen timestamp
 );
- create index mac_index on userinfo (mac);
- insert into userinfo(name,devicetype,mac,lastseen) values('lol','iphone','MMM',transaction_timestamp());
